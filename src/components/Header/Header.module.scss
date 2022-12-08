@@ -1,0 +1,27 @@
+
+.headerContainer {
+  position: sticky;
+  width: 100%;
+  background-color: var(--backgroundColor);
+  border-bottom: 0px;
+  box-shadow: 0px 3px 6px #0000004d;
+  z-index: 9;
+  top: 0;
+}
+.headerCenter {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.headerHead{
+
+}
+
+
+.headerCart{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-weight:700;
+}

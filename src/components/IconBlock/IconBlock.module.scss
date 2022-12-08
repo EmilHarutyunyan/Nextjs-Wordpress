@@ -1,0 +1,20 @@
+.iconBlockWrapper {
+  a {
+    display: flex;
+    align-items: center;
+    gap:10px;
+    text-transform: uppercase;
+    flex-direction: column;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  &:hover {
+    img {
+      transform: translateY(-8px);
+
+    }
+  }
+  img {
+    transition: all .3s ease-in-out;
+  }
+}

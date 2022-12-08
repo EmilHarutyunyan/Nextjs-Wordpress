@@ -1,0 +1,16 @@
+.iconTextWrapper {
+    display: flex;
+    align-items: center;
+    gap:3px;
+    & .topBarIcon {
+      width: 15px;
+    }
+    & .topBarText {
+      font-size: 14px;
+      font-weight: 700;
+    }
+    & .topBarDesc {
+      font-size: 12px;
+
+    }
+}

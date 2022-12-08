@@ -1,0 +1,25 @@
+.iconBlocks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:60px;
+  margin-top: 80px;
+}
+.headText {
+  h2 {
+    font-size: 34px;
+    line-height: 40px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 400;
+    }
+    text-align: center;
+    span {
+      font-size: 28px;
+      &.typing-text {
+        color:var(--secondColor);
+      }
+      text-transform: uppercase;
+      
+  }
+}

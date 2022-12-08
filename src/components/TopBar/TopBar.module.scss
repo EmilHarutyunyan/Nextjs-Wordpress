@@ -1,0 +1,19 @@
+
+.topBarWrapper {
+ background-color: #000000;
+}
+
+.topBarContent {
+  width: 100%;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.topBarInfoBlock {
+  display: flex;
+  align-items: center;
+  gap:10px;
+}

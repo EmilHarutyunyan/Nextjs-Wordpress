@@ -1,0 +1,66 @@
+:root {
+    --primaryColor: #EEEEEF;
+    --secondColor: #E4C500;
+    --backgroundColor: #1A2133;
+    --transition: all 0.3s ease;
+    --borderRadius: 5px;
+}
+  *,html,body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Montserrat',-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--primaryColor);
+    background-color: var(--backgroundColor);
+    font-weight: 400;
+    
+  }
+  ul li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .main-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .under-line {
+    position: relative;
+    &:hover  a:after {
+      transform: scale(1);
+      transform-origin: left center;
+    }
+    &:hover  p:after {
+      transform: scale(1);
+      transform-origin: left center;
+    }
+    
+    a:after,p:after {
+      display: block;
+      position: absolute;
+      top: calc(100% + 2px);
+      left: 0;
+      width: 100%;
+      border-bottom: 1px solid #ccc;
+      content: "";
+      transition: transform .6s cubic-bezier(.28,.75,.22,.95);
+      transform: scaleX(0);
+      transform-origin: right center;
+      border-color: var(--secondColor);
+      transform: scale(0);
+      transform-origin: left center;
+    }
+}
