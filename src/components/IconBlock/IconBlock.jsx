@@ -6,6 +6,7 @@ import styles from "./IconBlock.module.scss";
 const IconBlock = ({ icon, text, link,width,height }) => {
   return (
     <div className={styles.iconBlockWrapper}>
+    
       <Link href={link}>
         <Image
           src={icon}

@@ -2,8 +2,10 @@
   background-position: center;
   background-size: 100% 105%;
   background-repeat: no-repeat;
-  height: calc(100vh - 62px);
+  // height: calc(100vh - 62px);
   position: relative;
+  display: flex;
+  align-items: center;
   &::before {
     content: "";
   position: absolute;
@@ -18,14 +20,139 @@
   opacity: 1;
   transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
   }
+  & > h2 {
+    writing-mode:vertical-rl;
+    transform: rotate(180deg);
+    font-size: 50px;
+    color: #fff;
+    margin-left: 50px;
+  }
 }
 .patterSlideWrapper {
-  max-width: 1175px;
+  max-width: 1475px;
   margin: 0 auto;
   width: 100%;
+  & .swiper-button-disabled {
+    display: none;
+  }
 }
 .patternItem {
   display: flex;
   align-items: center;
   gap:120px;
+  justify-content: center;
+  margin-top: 57px;
+}
+
+.patterCol {
+  max-width: 423px;
+  margin: 0 auto;
+  width: 100%;
+  background-color: #1a2133;
+  border: 1px solid #000000;
+  padding: 34px 82px;
+  min-height: 588px;
+  border-radius: 27px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: center;
+  & p {
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #f9f9f9;
+    margin-bottom: 16px;
+  }
+  & h2 {
+    font-size: 25px;
+    line-height: 1.2;
+    font-weight: 200;
+    color: #f9f9f9;
+  }
+}
+.patternProd {
+  position: relative;
+  min-height: 950px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.imgWrap {
+ position: absolute;
+ left: -30%; 
+ top: 0;
+}
+.patternPrice {
+  margin-top: 10px;
+  & h4 {
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 200;
+    letter-spacing: 0.025em;
+    color: #f9f9f9;
+  }
+  & p {
+    font-size: 23px;
+    line-height: 1.2;
+    font-weight: 500;
+    letter-spacing: 0.025em;
+    color: #f9f9f9;
+    margin-top: 4px;
+  }
+  & h5 {
+    color: #e4c500;
+  }
+
+}
+.patternIconBlock {
+  display: flex;
+  align-items: center;
+  gap:40px;
+}
+.patterOptions {
+  text-align: center;
+  & p {
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 500;
+    color: #fefefe;
+    margin-bottom: 35px;
+  }
+  & button {
+    display: flex;
+    border: 1px solid #fefefe;
+    border-radius: 28.6px;
+    padding: 14px 20px;
+    max-width: 293px;
+    width: 100%;
+    margin: 0 auto;
+    color:#fefefe;
+    align-items: center;
+    font-weight: 700;
+    gap: 15px;
+    justify-content: center;
+  }
+  & button svg {
+    height: 27px;
+  }
+}
+.patternIconBlock {
+  margin-top: 100px;
+}
+.patternNav {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-size: 54px;
+  z-index: 999;
+  cursor: pointer;
+}
+.patternArrow {
+  
 }

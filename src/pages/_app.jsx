@@ -1,29 +1,21 @@
 import Layout from "../layout/layout";
-import "../../styles/GlobalStyle.scss"
+import "../../styles/GlobalStyle.scss";
 // Fonts
 import { Montserrat } from "@next/font/google";
 
 const montserrat = Montserrat({
-  weight: [
-    "100",
-    "200",
-    "300",
-    "400",
-    "500",
-    "600",
-    "700",
-    "800",
-    "900"
-  ],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
 });
 function MyApp({ Component, pageProps }) {
   return (
     <>
       {/* <Provider store={store}> */}
-        <Layout className={montserrat.className} >
+      <div className={montserrat.className}>
+        <Layout>
           <Component {...pageProps} />
         </Layout>
+      </div>
       {/* </Provider> */}
     </>
   );

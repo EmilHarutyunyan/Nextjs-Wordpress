@@ -19,7 +19,6 @@ const TopBar = () => {
         />
 
       </div>
-      
       <div className={styles.topBarInfoBlock} >
         <IconText img={"/icons/chat-icon.png"} text={"Live Chat"} />
         <IconText

@@ -10,7 +10,10 @@ import styles from "./Home.module.scss";
 import BorderText from "../components/BorderText/BorderText";
 import SliderHome from "../components/SliderHome/SliderHome";
 import Patterns from "../components/Patterns/Patterns";
+import SelectModel from "../components/SelectModel/SelectModel";
+import Slingshot from "../components/Slingshot/Slingshot";
 export default function Home() {
+  
   return (
     <>
       <SliderZoom>
@@ -47,10 +50,12 @@ export default function Home() {
             height={31}
           />
         </div>
+        <SelectModel />
         <BorderText text={"Popular Models"} />
         <SliderHome />
       </SliderZoom>
       <Patterns />
+      <Slingshot />
     </>
   );
 }

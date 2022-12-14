@@ -1,6 +1,8 @@
 
 .topBarWrapper {
  background-color: #000000;
+ position: relative;
+ z-index: 33;
 }
 
 .topBarContent {

@@ -1,0 +1,93 @@
+.slingshotWrap {
+  display: flex;
+  align-items: center;
+  gap: 90px;
+}
+.slingsotCont {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  & > p {
+    font-size: 60px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: 0.025em;
+    color: #f9f9f9;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+}
+.slingsotTitle {
+  & > p {
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: 0.025em;
+    color: #f9f9f9;
+    margin-bottom: 5px;
+  }
+  & > h3 {
+   
+    font-size: 60px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: 0.025em;
+    color: #f9f9f9;
+    margin-bottom: 20px;
+  }
+}
+.slingsotLogo {
+  & > p {
+    font-size: 19px;
+    color: #f9f9f9;
+    font-weight: 150;
+  }
+  & > div {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  & > div > p {
+    width: 80px;
+    text-align: center;
+    border: 0.6px solid #ffffff;
+    padding: 10px;
+  }
+}
+.slingsotBuy {
+  margin-top: 50px;
+  & > p {
+    font-size: 16px;
+line-height: 1.2;
+font-weight: 400;
+letter-spacing: 0.025em;
+color: #f9f9f9;
+margin-bottom: 5px;
+  }
+  & > span {
+    font-size: 23px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: 0.025em;
+    color: #f9f9f9;
+   
+  }
+  & > div > button {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #fefefe;
+    border-radius: 28.700000000000003px;
+    padding: 14px 18px;
+    max-width: 235px;
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #fefefe;
+    justify-content: center;
+    width: 100%;
+    gap:20px;
+  }
+
+}
