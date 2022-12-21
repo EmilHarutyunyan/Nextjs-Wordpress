@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from "next/link";
 import Navbar from '../NavBar/Navbar'
 import TopBar from '../TopBar/TopBar'
 import Image from 'next/image'
@@ -13,9 +14,9 @@ const Header = () => {
       <TopBar/>
       <div className={styles.headerContainer}>
         <div className={`${styles.headerCenter} main-container`}>
-          <div>
+          <Link href="/">
             <Image src={logoImage} placeholder='blur'  alt='logo' width={163} height={38} />
-          </div>
+          </Link>
           <Navbar />
           <div className={styles.headerCart}>
             <p>

@@ -1,0 +1,27 @@
+.imgBoxWrap {
+  max-width: 1758px;
+  width: 100%;
+  margin: 90px auto;
+
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  &.left {
+    flex-direction: row-reverse;
+  }
+}
+.imgBoxDesc {
+  & p {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 300;
+    color: #ffffff;
+    margin-top: 15px;
+  }
+  & h2 {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+}

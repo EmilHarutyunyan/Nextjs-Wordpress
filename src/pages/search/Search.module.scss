@@ -1,0 +1,25 @@
+.searchTitle {
+  font-weight: 200;
+  font-size: 18px;
+  padding: 20px 0;
+
+}
+.searchWrap {
+  
+  & > p {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 200;
+    color: #ffffff;
+    margin-top: 15px;
+    text-align: center;
+  }
+  & > h3 {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 15px;
+  }
+}
