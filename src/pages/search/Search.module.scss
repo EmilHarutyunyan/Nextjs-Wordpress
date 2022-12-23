@@ -23,3 +23,43 @@
     margin-top: 15px;
   }
 }
+.imgsBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 65px;
+  margin-top: 30px;
+}
+.layerMatsWrap {
+  margin-top:90px;
+  
+}
+.layerMats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:60px;
+  margin-top: 50px;
+  margin-bottom: 90px;
+}
+.textIconWrap {
+  display: flex;
+  flex-direction: column;
+  gap:15px;
+}
+.easyWrap {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.reviewsWrap {
+  text-align: center;
+  margin: 50px 0 38px 0;
+  > p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:15px;
+    margin-top:20px;
+  }
+}

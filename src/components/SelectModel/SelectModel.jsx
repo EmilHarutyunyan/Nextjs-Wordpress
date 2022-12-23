@@ -31,8 +31,8 @@ const SelectModel = () => {
         
         carsData[item].map(car => {
           
-          if(makeCar === car.Make) {
-            modelCarData.push(car.Model)
+          if(makeCar === car['Make']) {
+            modelCarData.push(car['Model'])
           }
         })
       })
@@ -42,13 +42,20 @@ const SelectModel = () => {
   useEffect(()=> {
     if(makeCar && modelCarChoose) {
       const yearsData = []
+      debugger
       Object.keys(carsData).map(item => {
         carsData[item].map(car => {
-          if(makeCar === car.Make && modelCarChoose === car.Model) {
+        
+
+          if(makeCar === car['Make'] && modelCarChoose === car['Model']) {
+            debugger
             yearsData.push(car['From/Year'])
           }
         })
       })
+      debugger
+      
+      console.log('🚀 ~ file: SelectModel.jsx:53 ~ Object.keys ~ yearsData', yearsData)
       setYarsCar(yearsData)
     }
   },[makeCar, modelCarChoose])
