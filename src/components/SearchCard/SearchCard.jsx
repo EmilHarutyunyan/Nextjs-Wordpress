@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import productImg from "../../../public/images/lime-green.jpg"
-import productImgHover from "../../../public/images"
+// import productImgHover from "../../../public/images"
 // Styles
 import styles from "./SearchCard.module.scss"
 const SearchCard = () => {
