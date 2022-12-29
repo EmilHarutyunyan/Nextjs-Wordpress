@@ -1,15 +1,15 @@
-"use client";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
+import { Player } from "video-react";
+import ReactPlayer from 'react-player/lazy'
 // Componets
 import TitleHead from "../../components/TitleHead/TitleHead";
 import HeroImage from "../../components/HeroImage/HeroImage";
 import ImgBox from "../../components/ImgBox/ImgBox";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import TextIcon from "../../components/TextIcon/TextIcon";
-import ReactPlayer from "react-player/youtube";
 import useModal from "../../hooks/useModal";
-import SearchCard from '../../components/SearchCard/SearchCard';
+import SearchCard from "../../components/SearchCard/SearchCard";
 
 // Images
 import res1 from "../../../public/images/result/1.png";
@@ -39,9 +39,10 @@ import Modal from "../../components/Modal/Modal";
 import ImgBoxSelect from "../../components/ImgBoxSelect/ImgBoxSelect";
 import SelectModel from "../../components/SelectModel/SelectModel";
 import SliderHome from "../../components/SliderHome/SliderHome";
+import ResultBanner from "../../components/ResultBanner/ResultBanner";
 
 const Search = () => {
-  const router = useRouter();
+  // const router = useRouter();
   const { isShowing: isLoginFormShowed, toggle: toggleLoginForm } = useModal();
   // const { isShowing: isRegistrationFormShowed,toggle: toggleRegistrationForm} = useModal();
   const [modalTitle, setModalTitle] = useState("Select Body Shape");
@@ -65,93 +66,107 @@ const Search = () => {
   const handleDrive = (title) => {
     setSelectDrive(title);
     setModalTitle("");
-    toggleLoginForm()
+    toggleLoginForm();
   };
-
+  const openModal = (cl) => {
+    toggleLoginForm();
+    setSelectBody(false);
+    setSelectSeating(false);
+    setSelectStorage(false);
+    setSelectDrive(false);
+    cl(true);
+  };
   return (
     <div className={styles.searchWrap}>
       <div>
-        <HeroImage >
-
+        <HeroImage>
+          <ResultBanner
+            openModal={openModal}
+            chooseModal={{
+              selectDrive,
+              selectStorage,
+              selectSeating,
+              selectBody,
+            }}
+          />
         </HeroImage>
-     
-        <button onClick={toggleLoginForm}>Open</button>
-        <SliderHome />
-          <Modal
-            isShowing={isLoginFormShowed}
-            hide={toggleLoginForm}
-            title={modalTitle}
-          >
-            <form action="">
-              {!selectBody && (
-                <div className={styles.selectBody}>
-                  <ImgBoxSelect
-                    imgSrc={electricImg}
-                    title={"Electric hatchback"}
-                    handleClick={handleSelectBody}
-                  />
-                  <ImgBoxSelect
-                    imgSrc={twoDoorImg}
-                    title={"2 Door hatchback"}
-                    handleClick={handleSelectBody}
-                  />
-                  <ImgBoxSelect
-                    imgSrc={fourDoorImg}
-                    title={"4 Door hatchback"}
-                    handleClick={handleSelectBody}
-                  />
-                  <ImgBoxSelect
-                    imgSrc={sedanImg}
-                    title={"Sedan"}
-                    handleClick={handleSelectBody}
-                  />
-                </div>
-              )}
-              {selectBody && !selectSeating && (
-                <div className={styles.selectBody}>
-                  <ImgBoxSelect
-                    imgSrc={min2}
-                    title={"2+2"}
-                    handleClick={handleSeating}
-                  />
-                  <ImgBoxSelect
-                    imgSrc={min3}
-                    title={"2+3"}
-                    handleClick={handleSeating}
-                  />
-                </div>
-              )}
-              {selectBody && selectSeating && !selectStorage && (
-                <div className={styles.selectBody}>
-                  <ImgBoxSelect
-                    imgSrc={noStorage}
-                    title={"Without Storage"}
-                    handleClick={handleStorage}
-                  />
-                  <ImgBoxSelect
-                    imgSrc={yesStorage}
-                    title={"With Storage"}
-                    handleClick={handleStorage}
-                  />
-                </div>
-              )}
-              {selectBody && selectSeating && selectStorage && !selectDrive && (
-                <div className={styles.selectBody}>
-                  <ImgBoxSelect
-                    imgSrc={leftDrive}
-                    title={"Lefthand Drive"}
-                    handleClick={handleDrive}
-                  />
-                  <ImgBoxSelect
-                    imgSrc={rightDrive}
-                    title={"Righthand Drive"}
-                    handleClick={handleDrive}
-                  />
-                </div>
-              )}
-            </form>
-          </Modal>
-       
+
+        <button onClick={openModal}>Open</button>
+
+        <Modal
+          isShowing={isLoginFormShowed}
+          hide={toggleLoginForm}
+          title={modalTitle}
+        >
+          <form action="">
+            {!selectBody && (
+              <div className={styles.selectBody}>
+                <ImgBoxSelect
+                  imgSrc={electricImg}
+                  title={"Electric hatchback"}
+                  handleClick={handleSelectBody}
+                />
+                <ImgBoxSelect
+                  imgSrc={twoDoorImg}
+                  title={"2 Door hatchback"}
+                  handleClick={handleSelectBody}
+                />
+                <ImgBoxSelect
+                  imgSrc={fourDoorImg}
+                  title={"4 Door hatchback"}
+                  handleClick={handleSelectBody}
+                />
+                <ImgBoxSelect
+                  imgSrc={sedanImg}
+                  title={"Sedan"}
+                  handleClick={handleSelectBody}
+                />
+              </div>
+            )}
+            {selectBody && !selectSeating && (
+              <div className={styles.selectBody}>
+                <ImgBoxSelect
+                  imgSrc={min2}
+                  title={"2+2"}
+                  handleClick={handleSeating}
+                />
+                <ImgBoxSelect
+                  imgSrc={min3}
+                  title={"2+3"}
+                  handleClick={handleSeating}
+                />
+              </div>
+            )}
+            {selectBody && selectSeating && !selectStorage && (
+              <div className={styles.selectBody}>
+                <ImgBoxSelect
+                  imgSrc={noStorage}
+                  title={"Without Storage"}
+                  handleClick={handleStorage}
+                />
+                <ImgBoxSelect
+                  imgSrc={yesStorage}
+                  title={"With Storage"}
+                  handleClick={handleStorage}
+                />
+              </div>
+            )}
+            {selectBody && selectSeating && selectStorage && !selectDrive && (
+              <div className={styles.selectBody}>
+                <ImgBoxSelect
+                  imgSrc={leftDrive}
+                  title={"Lefthand Drive"}
+                  handleClick={handleDrive}
+                />
+                <ImgBoxSelect
+                  imgSrc={rightDrive}
+                  title={"Righthand Drive"}
+                  handleClick={handleDrive}
+                />
+              </div>
+            )}
+          </form>
+        </Modal>
       </div>
       <p>
         F1Mats, The only Company In The World Manufacturing & Selling Leather
@@ -252,12 +267,10 @@ const Search = () => {
           alignText="center"
         />
       </div>
-      <ReactPlayer
-        url="https://www.youtube.com/watch?v=RzlAiBI0fUo"
-        height={"787px"}
-        width={"1400px"}
-        style={{ margin: "0 auto" }}
-      />
+      <div className={styles.searchVideo}>
+      <iframe width="1280" height="720" src="https://www.youtube.com/embed/ysz5S6PUM-U" title="Chilled Serenity #5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style={{margin:"0  auto"}}></iframe>
+
+      </div>
       <div className={styles.reviewsWrap}>
         <TitleHead
           title={"REVIEWS"}
@@ -269,7 +282,6 @@ const Search = () => {
           <span>Videos</span>
         </p>
       </div>
-      {/* <SearchCard /> */}
     </div>
   );
 };

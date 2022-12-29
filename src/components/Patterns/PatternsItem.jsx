@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'next/future/image'
 import React from 'react'
 import IconBlock from '../IconBlock/IconBlock'
 import PatternsSlide from './PatternsSlide'

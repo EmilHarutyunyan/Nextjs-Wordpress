@@ -42,18 +42,18 @@ const SelectModel = () => {
   useEffect(()=> {
     if(makeCar && modelCarChoose) {
       const yearsData = []
-      debugger
+      
       Object.keys(carsData).map(item => {
         carsData[item].map(car => {
         
 
           if(makeCar === car['Make'] && modelCarChoose === car['Model']) {
-            debugger
+            
             yearsData.push(car['From/Year'])
           }
         })
       })
-      debugger
+      
       
       console.log('🚀 ~ file: SelectModel.jsx:53 ~ Object.keys ~ yearsData', yearsData)
       setYarsCar(yearsData)
@@ -64,9 +64,6 @@ const SelectModel = () => {
     e.preventDefault()
     debugger
     if(makeCar && modelCarChoose && yearsCarChoose) {
-    console.log('yearsCarChoose :', yearsCarChoose);
-    console.log('modelCarChoose :', modelCarChoose);
-    console.log('makeCar :', makeCar);
       
       router.push(`/search/results?make=${makeCar}&model=${modelCarChoose}&year=${yearsCarChoose}`)
     }

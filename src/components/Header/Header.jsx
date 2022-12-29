@@ -15,7 +15,10 @@ const Header = () => {
       <div className={styles.headerContainer}>
         <div className={`${styles.headerCenter} main-container`}>
           <Link href="/">
+          <a >
             <Image src={logoImage} placeholder='blur'  alt='logo' width={163} height={38} />
+
+          </a>
           </Link>
           <Navbar />
           <div className={styles.headerCart}>

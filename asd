@@ -9,19 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "12.3.1",
+    "@next/font": "^13.0.5",
+    "next": "13.0.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
     "react-player": "^2.11.0",
     "react-type-animation": "^2.1.2",
     "styled-components": "^5.3.6",
-    "swiper": "^8.4.5",
-    "video-react": "^0.16.0"
+    "swiper": "^8.4.5"
   },
   "devDependencies": {
-    "eslint": "8.25.0",
-    "eslint-config-next": "12.3.1",
     "sass": "^1.56.1"
   }
 }

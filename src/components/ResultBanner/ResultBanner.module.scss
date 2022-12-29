@@ -1,0 +1,166 @@
+.resultBannerWrap {
+  display: flex;
+  justify-content: end;
+  margin-right: 70px;
+  flex-direction: column;
+  align-items: end;
+  padding-top: 40px;
+  color: #000000;
+}
+.resultBannerContent {
+  max-width: 1240px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 40px 40px 0px 0px;
+  padding: 40px 40px 25px 40px;
+}
+.resultBannerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    > p {
+      font-size: 48px;
+      line-height: 45px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: #000;
+    }
+  }
+  .resultBannerProf {
+    display: flex;
+    align-items: center;
+    > div {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 8px;
+      > p {
+        font-size: 11px;
+        line-height: 18px;
+        font-weight: 500;
+        letter-spacing: 0.025em;
+        color: #000;
+      }
+    }
+  }
+}
+.resultBannerTitle {
+  h3 {
+    font-size: 24px;
+    line-height: 33px;
+    font-weight: 700;
+    color: #000000;
+    margin-top: 10px;
+  }
+  margin-bottom: 20px;
+}
+.resultBannerSelect {
+  margin-bottom: 60px;
+  width: 100%;
+  h4 {
+    font-size: 16px;
+    line-height: 40px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 5px;
+  }
+  select {
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    padding: 13px 0 13px 14px;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: #f9f9f9;
+    max-width: 464px;
+    width: 100%;
+    outline: none;
+    margin-right: 20px;
+    :last-child {
+      margin-right: 0;
+    }
+  }
+}
+.resultBannerSliderTitle {
+  > h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 5px;
+  }
+  > p {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: #3e3e3e;
+  }
+  margin-bottom: 40px;
+}
+.customNav {
+  color: #000000;
+}
+
+.swiperSlide {
+  text-align: center;
+  > p {
+    font-size: 18px;
+    color: #000000;
+    font-weight: 600;
+  }
+  > h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+  }
+  > button {
+    display: flex;
+    width: 100%;
+    max-width: 190px;
+    border: 1px solid #fefefe;
+    border-radius: 16.2px;
+    padding: 7px 12px;
+    margin: 0 auto;
+    color: #fefefe;
+    background-color: #000;
+    align-items: center;
+    font-weight: 700;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  > button svg {
+    height: 10px;
+  }
+}
+.editSetting {
+  margin-bottom: 60px;
+  & .editSettingSelect {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  & .editSettingCont{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000;
+    margin: 20px 0;
+    cursor: pointer;
+  }
+  .editSettingModal {
+    color: #2c83a8;
+  }
+
+}
+

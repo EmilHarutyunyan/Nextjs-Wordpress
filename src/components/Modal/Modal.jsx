@@ -1,4 +1,4 @@
-"use client";
+
 import React from "react";
 // Styles
 import styles from "./Modal.module.scss";
@@ -6,7 +6,7 @@ import styles from "./Modal.module.scss";
 const Modal = ({ isShowing, hide, title, ...props }) => {
   return (
     <>
-      {/* {isShowing ? ( */}
+      {isShowing ? (
         <div className={styles.modalOverlay}>
           <div className={styles.modalWrapper}>
             <div className={styles.modal}>
@@ -26,7 +26,7 @@ const Modal = ({ isShowing, hide, title, ...props }) => {
             </div>
           </div>
         </div>
-      {/* ) : null} */}
+      ) : null}
     </>
   );
 };

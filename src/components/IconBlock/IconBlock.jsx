@@ -8,6 +8,7 @@ const IconBlock = ({ icon, text, link,width,height }) => {
     <div className={styles.iconBlockWrapper}>
     
       <Link href={link}>
+      <a >
         <Image
           src={icon}
           alt={text}
@@ -16,6 +17,8 @@ const IconBlock = ({ icon, text, link,width,height }) => {
           placeholder="blur"
         />
         <span>{text}</span>
+
+      </a>
       </Link>
     </div>
   );
