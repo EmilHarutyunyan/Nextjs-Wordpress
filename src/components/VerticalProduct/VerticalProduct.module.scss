@@ -1,0 +1,34 @@
+.verticalWrap {
+  display: flex;
+  align-items: center;
+  gap:94px;
+}
+.galleryThumbs {
+  margin: 0 !important;
+  height: 800px;
+
+}
+
+.galleryThumbs .swiperSlide.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.swiperSlide{
+  & img {
+    padding: 3px !important;
+
+  }
+  &Active img{
+    outline: 1px solid #000 !important;
+  }
+}
+.galleryThumbs .swiperSlide.swiper-slide-active img {
+  opacity: 1;
+}
+
+.galleryThumbs .swiperSlide.swiper-slide:hover img {
+  opacity: 1;
+}

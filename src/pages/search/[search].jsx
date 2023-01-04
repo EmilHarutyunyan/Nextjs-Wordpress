@@ -1,15 +1,16 @@
 import { useRouter } from "next/router";
 import React, { useState } from "react";
-import { Player } from "video-react";
-import ReactPlayer from 'react-player/lazy'
-// Componets
+
+// Components
 import TitleHead from "../../components/TitleHead/TitleHead";
 import HeroImage from "../../components/HeroImage/HeroImage";
 import ImgBox from "../../components/ImgBox/ImgBox";
 import Image from "next/image";
 import TextIcon from "../../components/TextIcon/TextIcon";
 import useModal from "../../hooks/useModal";
-import SearchCard from "../../components/SearchCard/SearchCard";
+import Modal from "../../components/Modal/Modal";
+import ImgBoxSelect from "../../components/ImgBoxSelect/ImgBoxSelect";
+import ResultBanner from "../../components/ResultBanner/ResultBanner";
 
 // Images
 import res1 from "../../../public/images/result/1.png";
@@ -35,16 +36,11 @@ import rightDrive from "../../../public/images/result/rightDrive.png";
 
 // Styles
 import styles from "./Search.module.scss";
-import Modal from "../../components/Modal/Modal";
-import ImgBoxSelect from "../../components/ImgBoxSelect/ImgBoxSelect";
-import SelectModel from "../../components/SelectModel/SelectModel";
-import SliderHome from "../../components/SliderHome/SliderHome";
-import ResultBanner from "../../components/ResultBanner/ResultBanner";
 
 const Search = () => {
   // const router = useRouter();
-  const { isShowing: isLoginFormShowed, toggle: toggleLoginForm } = useModal();
-  // const { isShowing: isRegistrationFormShowed,toggle: toggleRegistrationForm} = useModal();
+  const { isShowing: isCarFormShowed, toggle: toggleCarForm } = useModal();
+  
   const [modalTitle, setModalTitle] = useState("Select Body Shape");
   const [selectBody, setSelectBody] = useState(false);
   const [selectSeating, setSelectSeating] = useState(false);
@@ -66,10 +62,10 @@ const Search = () => {
   const handleDrive = (title) => {
     setSelectDrive(title);
     setModalTitle("");
-    toggleLoginForm();
+    toggleCarForm();
   };
   const openModal = (cl) => {
-    toggleLoginForm();
+    toggleCarForm();
     setSelectBody(false);
     setSelectSeating(false);
     setSelectStorage(false);
@@ -94,8 +90,8 @@ const Search = () => {
         <button onClick={openModal}>Open</button>
 
         <Modal
-          isShowing={isLoginFormShowed}
-          hide={toggleLoginForm}
+          isShowing={isCarFormShowed}
+          hide={toggleCarForm}
           title={modalTitle}
         >
           <form action="">
@@ -268,7 +264,8 @@ const Search = () => {
         />
       </div>
       <div className={styles.searchVideo}>
-      <iframe width="1280" height="720" src="https://www.youtube.com/embed/ysz5S6PUM-U" title="Chilled Serenity #5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style={{margin:"0  auto"}}></iframe>
+     <iframe width={1280} height={720} src="https://www.youtube.com/embed/ysz5S6PUM-U" title="Chilled Serenity #5" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{margin: "0 auto" }}/>
+
 
       </div>
       <div className={styles.reviewsWrap}>

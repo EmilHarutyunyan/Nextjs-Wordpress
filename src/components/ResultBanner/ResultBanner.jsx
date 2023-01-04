@@ -30,7 +30,7 @@ const ResultBanner = ({ openModal, chooseModal }) => {
   const [yearsCarChoose, setYarsCarChoose] = useState("");
 
   const [editSetting, setEditSetting] = useState(false);
-console.count()
+
   useEffect(() => {
     setMakeCar(query.make);
   }, [query.make]);

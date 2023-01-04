@@ -1,0 +1,22 @@
+.customizeModelWrap {
+  background-color: #fff;
+  padding: 5px 0 0 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.customizeModelProduct {
+  padding-top: 25px;
+  &>h1 {
+    font-size: 24px;
+    line-height: 37px;
+    font-weight: 700;
+    color: #000000;
+    
+  }
+}
+.customizeModelSettings {
+  width: 100%;
+  max-width:541px;
+  background-color: #F9F9F9;
+}
