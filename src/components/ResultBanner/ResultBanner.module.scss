@@ -143,6 +143,11 @@
     flex-direction: column;
     align-items: flex-start;
   }
+  & .editSettingContWrap {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
   & .editSettingCont{
     display: flex;
     align-items: center;

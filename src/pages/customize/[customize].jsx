@@ -1,4 +1,5 @@
 import React from 'react'
+import SettingCustomize from '../../components/SettingCustomize/SettingCustomize';
 import StarRating from '../../components/StarRating/StarRating';
 import VerticalProduct from '../../components/VerticalProduct/VerticalProduct'
 import styles from "./Customize.module.scss"
@@ -12,7 +13,7 @@ const CustomizeModel = () => {
         </h1>
         <StarRating />
         <VerticalProduct />
-        
+        <SettingCustomize />
       </div>
       <div className={styles.customizeModelSettings}>4</div>
     </div>

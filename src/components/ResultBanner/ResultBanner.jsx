@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./ResultBanner.module.scss";
 // images
@@ -15,14 +16,17 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { useRouter } from "next/router";
 import { carsData } from "../../data/data";
+import StarRating from "../StarRating/StarRating";
+import { setAllCar } from "../../redux/features/car/carSlice";
 
 // styles
 
-const ResultBanner = ({ openModal, chooseModal }) => {
-  const { query } = useRouter();
-  
-  const [makeCar, setMakeCar] = useState("");
+const ResultBanner = ({ openModal, chooseModal,pageQuery }) => {
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const { carConfig } = useSelector((state) => state.car);
 
+  const [makeCar, setMakeCar] = useState("");
   const [modelCar, setModelCar] = useState([]);
   const [modelCarChoose, setModelCarChoose] = useState("");
 
@@ -32,11 +36,10 @@ const ResultBanner = ({ openModal, chooseModal }) => {
   const [editSetting, setEditSetting] = useState(false);
 
   useEffect(() => {
-    setMakeCar(query.make);
-  }, [query.make]);
+    setMakeCar(pageQuery.make);
+  }, [pageQuery.make]);
 
   useEffect(() => {
-    
     if (makeCar) {
       const modelCarData = [];
       Object.keys(carsData).map((item) => {
@@ -58,10 +61,10 @@ const ResultBanner = ({ openModal, chooseModal }) => {
         carsData[item].map((car) => {
           if (makeCar === car["Make"] && modelCarChoose === car["Model"]) {
             yearsData.push(car["From/Year"]);
+           
           }
         });
       });
-
       setYarsCar(yearsData);
     }
   }, [makeCar, modelCarChoose]);
@@ -71,15 +74,28 @@ const ResultBanner = ({ openModal, chooseModal }) => {
   };
   useEffect(() => {
     if (yearsCarChoose) {
+      dispatch(
+        setAllCar({
+          make: makeCar,
+          model: modelCarChoose,
+          year: yearsCarChoose,
+        })
+      );
       openModal(handleEdit);
     }
   }, [yearsCarChoose]);
 
   const handleEditSelect = () => {
-    setEditSetting(false)
-  }
+    setEditSetting(false);
+  };
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
+
+  const handleClick = () => {
+    router.push(
+      `/customize/result?make=${carConfig.make}&model=${carConfig.model}&year=${carConfig.year}`
+    );
+  };
   return (
     <div className={styles.resultBannerWrap}>
       <div className={styles.resultBannerContent}>
@@ -114,9 +130,17 @@ const ResultBanner = ({ openModal, chooseModal }) => {
         <div className={styles.editSetting}>
           <div className={styles.editSettingSelect}>
             {editSetting ? (
-              <div className={styles.editSettingCont} onClick={handleEditSelect}>
-                <Image src={pen} />
-                <p>{query.make} {modelCarChoose} {yearsCarChoose}</p>
+              <div className={styles.editSettingContWrap}>
+                <div
+                  className={styles.editSettingCont}
+                  onClick={handleEditSelect}
+                >
+                  <Image src={pen} />
+                  <p>
+                    {query.make} {modelCarChoose} {yearsCarChoose}
+                  </p>
+                </div>
+                <StarRating />
               </div>
             ) : (
               <div className={styles.resultBannerSelect}>
@@ -155,11 +179,15 @@ const ResultBanner = ({ openModal, chooseModal }) => {
               </div>
             )}
           </div>
-          {editSetting ? ( <div className={styles.editSettingModal} onClick={handleEditSelect}>
-            <Image src={pen} />
-            <p>{chooseModal.selectBody} ,{chooseModal.selectSeating} Seating, {chooseModal.selectStorage}, {chooseModal.selectDrive} </p>
-          </div>) : null}
-         
+          {editSetting ? (
+            <div className={styles.editSettingModal} onClick={handleEditSelect}>
+              <Image src={pen} />
+              <p>
+                {chooseModal.selectBody} ,{chooseModal.selectSeating} Seating,{" "}
+                {chooseModal.selectStorage}, {chooseModal.selectDrive}{" "}
+              </p>
+            </div>
+          ) : null}
         </div>
 
         <div className={styles.resultBannerSliderTitle}>
@@ -193,10 +221,13 @@ const ResultBanner = ({ openModal, chooseModal }) => {
               .map((_, idx) => {
                 return (
                   <SwiperSlide className={styles.swiperSlide} key={idx}>
-                    <Image src={xaliImg} />
+                    <Image
+                      src={xaliImg}
+                      onClick={() => handleClick()}
+                    />
                     <p>Single Layer</p>
                     <h2>Diamond Stich Pattern</h2>
-                    <button>
+                    <button onClick={() => handleClick()}>
                       <span>Customice Your Mat</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

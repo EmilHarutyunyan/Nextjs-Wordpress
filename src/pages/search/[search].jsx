@@ -36,16 +36,19 @@ import rightDrive from "../../../public/images/result/rightDrive.png";
 
 // Styles
 import styles from "./Search.module.scss";
+import { useDispatch } from "react-redux";
+import { setAllCarDetails } from "../../redux/features/car/carSlice";
 
 const Search = () => {
-  // const router = useRouter();
+  const {query} = useRouter();
+  const dispatch = useDispatch();
   const { isShowing: isCarFormShowed, toggle: toggleCarForm } = useModal();
-  
+
   const [modalTitle, setModalTitle] = useState("Select Body Shape");
   const [selectBody, setSelectBody] = useState(false);
   const [selectSeating, setSelectSeating] = useState(false);
   const [selectStorage, setSelectStorage] = useState(false);
-  const [selectDrive, setSelectDrive] = useState();
+  const [selectDrive, setSelectDrive] = useState(false);
   // const [select]
   const handleSelectBody = (title) => {
     setSelectBody(title);
@@ -61,6 +64,14 @@ const Search = () => {
   };
   const handleDrive = (title) => {
     setSelectDrive(title);
+    dispatch(
+      setAllCarDetails({
+        carBody: selectBody,
+        carSeating: selectSeating,
+        carStorage: selectStorage,
+        carDrive: title,
+      })
+    );
     setModalTitle("");
     toggleCarForm();
   };
@@ -84,10 +95,9 @@ const Search = () => {
               selectSeating,
               selectBody,
             }}
+            pageQuery={query}
           />
         </HeroImage>
-
-        <button onClick={openModal}>Open</button>
 
         <Modal
           isShowing={isCarFormShowed}
@@ -264,9 +274,16 @@ const Search = () => {
         />
       </div>
       <div className={styles.searchVideo}>
-     <iframe width={1280} height={720} src="https://www.youtube.com/embed/ysz5S6PUM-U" title="Chilled Serenity #5" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{margin: "0 auto" }}/>
-
-
+        <iframe
+          width={1280}
+          height={720}
+          src="https://www.youtube.com/embed/ysz5S6PUM-U"
+          title="Chilled Serenity #5"
+          frameBorder={0}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          style={{ margin: "0 auto" }}
+        />
       </div>
       <div className={styles.reviewsWrap}>
         <TitleHead
